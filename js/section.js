@@ -12,11 +12,14 @@ t.render(function(){
   t.card('attachments')
   .get('attachments')
   .filter(function(attachment){
-    return attachment.url.indexOf('http://www.nps.gov/yell/') == 0;
+    return attachment.url.indexOf('https://www.youtube.com/') == 0;
   })
-  .then(function(yellowstoneAttachments){
-    var urls = yellowstoneAttachments.map(function(a){ return a.url; });
-    document.getElementById('urls').textContent = urls.join(', ');
+  .then(function(){
+    return t.get('card', 'private', 'url').then(function(url) {
+      var iframe = '<iframe src="' + url + '?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+      document.getElementById('video').innerHTML = iframe;
+    })
+    
   })
   .then(function(){
     return t.sizeTo('#content');
