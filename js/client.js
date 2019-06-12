@@ -250,13 +250,10 @@ var cardButtonCallback = function(t){
   */
 };
 
-var addYTCardButtonCallback = function (t) {
+var addYTCardButtonCallback = function (t, opt) {
   return t.popup({
     title : "Add YouTube Link",
-    search: {
-      count: 1,
-      placeholder: "Add your YouTube URL here"
-    }
+    url: './inputData.html'
   });
 };
 
