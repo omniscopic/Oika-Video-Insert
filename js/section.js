@@ -16,7 +16,9 @@ t.render(function(){
   })
   .then(function(){
     return t.get('card', 'private', 'url').then(function(url) {
-      var iframe = '<iframe src="' + url + '?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+      yt_code = url.split("=")[1];
+
+      var iframe = '<iframe src="https://www.youtube.com/embed/"'+yt_code+' frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
       document.getElementById('video').innerHTML = iframe;
     })
     
