@@ -26,9 +26,7 @@ t.render(function(){
 });
 
 document.getElementById('submitURL').addEventListener('click', function(){
-  var url = document.getElementById('ytURL').value;
-  return t.set('card', 'private', 'url', url)
-  .then(function(){
-    t.closePopup();
-  })
+  var ytURL = document.getElementById('ytURL').value;
+  t.attach({url: ytURL});
+  t.closePopup();
 })
