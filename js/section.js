@@ -17,7 +17,7 @@ t.render(function(){
   .then(function(ytURL){
     return t.get('card', 'private', 'ytURL').then(function(url){
       ytURL = JSON.stringify(url, null, 2);
-      yt_code = ytURL.split("=")[1];
+      yt_code = ytURL.split("=")[1].split('"')[0];
       console.log(yt_code)
       var iframe = '<iframe src="https://www.youtube.com/embed/"'+yt_code+' frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
       document.getElementById('video').innerHTML = iframe;    
