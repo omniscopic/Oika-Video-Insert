@@ -285,7 +285,7 @@ TrelloPowerUp.initialize({
         id: 'YouTube', // optional if you aren't using a function for the title
         claimed: claimed,
         icon: GLITCH_ICON,
-        title: 'Video',
+        title: 'Video Attachment',
         content: {
           type: 'iframe',
           url: t.signUrl('./section.html', { arg: 'you can pass your section args here' }),
