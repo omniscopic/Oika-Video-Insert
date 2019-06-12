@@ -12,6 +12,7 @@ t.render(function(){
   t.card('attachments')
   .get('attachments')
   .filter(function(attachment){
+    console.log(attachment);
     return attachment.url.indexOf('https://www.youtube.com') == 0;
   })
   .then(function(ytURL){
