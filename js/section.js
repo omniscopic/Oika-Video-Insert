@@ -12,16 +12,13 @@ t.render(function(){
   t.card('attachments')
   .get('attachments')
   .filter(function(attachment){
-    return attachment.url.indexOf('https://www.youtube.com/') == 0;
+    return attachment.url.indexOf('https://www.youtube.com') == 0;
   })
-  .then(function(){
-    return t.get('card', 'private', 'url').then(function(url) {
-      yt_code = url.split("=")[1];
+  .then(function(ytURL){
+    yt_code = ytURL.url.split("=")[1];
 
-      var iframe = '<iframe src="https://www.youtube.com/embed/"'+yt_code+' frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-      document.getElementById('video').innerHTML = iframe;
-    })
-    
+    var iframe = '<iframe src="https://www.youtube.com/embed/"'+yt_code+' frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    document.getElementById('video').innerHTML = iframe;    
   })
   .then(function(){
     return t.sizeTo('#content');
