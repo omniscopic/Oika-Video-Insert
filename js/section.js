@@ -12,11 +12,11 @@ t.render(function(){
   t.card('attachments')
   .get('attachments')
   .filter(function(attachment){
-    console.log(attachment);
-    return attachment.url.indexOf('https://www.youtube.com') == 0;
+    return attachment.url;
   })
   .then(function(ytURL){
-    yt_code = ytURL.url.split("=")[1];
+    console.log(ytURL);
+    yt_code = ytURL.split("=")[1];
 
     var iframe = '<iframe src="https://www.youtube.com/embed/"'+yt_code+' frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     document.getElementById('video').innerHTML = iframe;    
