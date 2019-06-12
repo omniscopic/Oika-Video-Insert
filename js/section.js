@@ -16,9 +16,10 @@ t.render(function(){
   })
   .then(function(ytURL){
     return t.get('card', 'private', 'ytURL').then(function(url){
-      yt_code = ytURL.split("=")[1];
-      var iframe = '<iframe src="https://www.youtube.com/embed/"'+yt_code+' frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-      document.getElementById('video').innerHTML = iframe;    
+      console.log(JSON.stringify(url, null, 2));
+      //yt_code = url.split("=")[1];
+      //var iframe = '<iframe src="https://www.youtube.com/embed/"'+yt_code+' frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      //document.getElementById('video').innerHTML = iframe;    
     })
   })
   .then(function(){
