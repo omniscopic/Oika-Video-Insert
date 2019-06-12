@@ -29,7 +29,6 @@ document.getElementById('submitURL').addEventListener('click', function(){
   var url = document.getElementById('ytURL').value;
   return t.set('card', 'private', 'url', url)
   .then(function(){
-    console.log(url);
     t.closePopup();
   })
 })
