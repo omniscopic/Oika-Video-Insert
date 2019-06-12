@@ -25,12 +25,11 @@ t.render(function(){
   })
 });
 
-document.getElementById('save').addEventListener('click', function(){
-  return t.set('board', 'private', 'vegetable', vegetableSelector.value)
+document.getElementById('submitURL').addEventListener('click', function(){
+  var url = document.getElementById('ytURL').value;
+  return t.set('card', 'private', 'url', url)
   .then(function(){
-    return t.set('board', 'shared', 'fruit', fruitSelector.value);
-  })
-  .then(function(){
+    console.log(url);
     t.closePopup();
   })
 })
