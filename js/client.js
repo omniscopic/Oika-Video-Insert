@@ -250,6 +250,16 @@ var cardButtonCallback = function(t){
   */
 };
 
+var addYTCardButtonCallback = function (t) {
+  return t.popup({
+    title : "Add YouTube Link",
+    search: {
+      count: 1,
+      placeholder: "Add your YouTube URL here"
+    }
+  });
+};
+
 // We need to call initialize to get all of our capability handles set up and registered with Trello
 TrelloPowerUp.initialize({
   // NOTE about asynchronous responses
@@ -336,7 +346,7 @@ TrelloPowerUp.initialize({
       // we recommend that you use a popup on click generally
       icon: GRAY_ICON, // don't use a colored icon here
       text: 'Add YouTube',
-      callback: cardButtonCallback
+      callback: addYTCardButtonCallback
     }];
   },
   'card-detail-badges': function(t, options) {
