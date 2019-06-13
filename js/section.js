@@ -17,7 +17,7 @@ t.render(function(){
       console.log(url.startsWith("https://www.youtube.com"))
       console.log(url.startsWith("https://m.youtube.com"))
       console.log(url.startsWith("https://youtu.be"))
-      if (url.startsWith("https://www.youtube.com")){
+      if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com")){
         yt_code = url.split("=")[1];
       }
       // ytURL = JSON.stringify(url, null, 2);
