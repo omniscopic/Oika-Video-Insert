@@ -15,9 +15,9 @@ t.render(function(){
   .then(function(ytURL){
     return t.get('card', 'private', 'ytURL').then(function(url){
       console.log(url);
-      ytURL = JSON.stringify(url, null, 2);
-      console.log(ytURL);
-      yt_code = ytURL.split("=")[1].split('"')[0];
+      // ytURL = JSON.stringify(url, null, 2);
+      // console.log(ytURL);
+      yt_code = url.split("=")[1];
       var iframe = '<iframe width="853" height="480" src="https://www.youtube.com/embed/'+yt_code+'" frameborder="0" allowfullscreen></iframe>';
       document.getElementById('video').innerHTML = iframe;    
     })
