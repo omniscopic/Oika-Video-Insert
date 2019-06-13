@@ -19,6 +19,8 @@ t.render(function(){
       console.log(url.startsWith("https://youtu.be"))
       if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com")){
         yt_code = url.split("=")[1];
+      }else if (url.startsWith("https://youtu.be")){
+        yt_code = url.split("/")[3];
       }
       // ytURL = JSON.stringify(url, null, 2);
       var iframe = '<iframe width="853" height="480" src="https://www.youtube.com/embed/'+yt_code+'" frameborder="0" allowfullscreen></iframe>';
