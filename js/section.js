@@ -17,9 +17,10 @@ t.render(function(){
       console.log(url.startsWith("https://www.youtube.com"))
       console.log(url.startsWith("https://m.youtube.com"))
       console.log(url.startsWith("https://youtu.be"))
+      if (url.startsWith("https://www.youtube.com")){
+        yt_code = url.split("=")[1];
+      }
       // ytURL = JSON.stringify(url, null, 2);
-      // console.log(ytURL);
-      yt_code = url.split("=")[1];
       var iframe = '<iframe width="853" height="480" src="https://www.youtube.com/embed/'+yt_code+'" frameborder="0" allowfullscreen></iframe>';
       document.getElementById('video').innerHTML = iframe;    
     })
