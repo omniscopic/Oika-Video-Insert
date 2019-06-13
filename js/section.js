@@ -14,7 +14,9 @@ t.render(function(){
   })
   .then(function(ytURL){
     return t.get('card', 'private', 'ytURL').then(function(url){
-      console.log(url);
+      console.log(url.startsWith("https://www.youtube.com"))
+      console.log(url.startsWith("https://m.youtube.com"))
+      console.log(url.startsWith("https://youtu.be"))
       // ytURL = JSON.stringify(url, null, 2);
       // console.log(ytURL);
       yt_code = url.split("=")[1];
