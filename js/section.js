@@ -17,9 +17,9 @@ t.render(function(){
       console.log(url.startsWith("https://www.youtube.com"))
       console.log(url.startsWith("https://m.youtube.com"))
       console.log(url.startsWith("https://youtu.be"))
-      if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com")){
+      if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com") || url.startsWith("http://www.youtube.com") || url.startsWith("http://m.youtube.com")){
         yt_code = url.split("=")[1];
-      }else if (url.startsWith("https://youtu.be")){
+      }else if (url.startsWith("https://youtu.be") || url.startsWith("http://youtu.be")){
         yt_code = url.split("/")[3];
       }
       // ytURL = JSON.stringify(url, null, 2);
