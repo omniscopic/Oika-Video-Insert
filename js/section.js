@@ -16,6 +16,7 @@ t.render(function(){
     return t.get('card', 'shared', 'ytURL').then(function(url){
       if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com") || url.startsWith("http://www.youtube.com") || url.startsWith("http://m.youtube.com")){
         if (url.includes("watch")){
+          console.log(url);
           yt_code = url.split("=")[1];
           var iframe = '<iframe width="853" height="480" src="https://www.youtube.com/embed/'+yt_code+'" frameborder="0" allowfullscreen></iframe>';
         }else if (url.includes("playlist")){
