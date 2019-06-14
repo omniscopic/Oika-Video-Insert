@@ -13,7 +13,7 @@ t.render(function(){
     return attachment.url;
   })
   .then(function(ytURL){
-    return t.get('card', 'private', 'ytURL').then(function(url){
+    return t.get('card', 'shared', 'ytURL').then(function(url){
       if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com") || url.startsWith("http://www.youtube.com") || url.startsWith("http://m.youtube.com")){
         if (url.includes("watch")){
           yt_code = url.split("=")[1];
