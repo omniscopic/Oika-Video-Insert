@@ -303,7 +303,7 @@ TrelloPowerUp.initialize({
         }
       }
       ]
-    }else{{
+    }else{
       return [{
         id: 'YouTube', // optional if you aren't using a function for the title
         claimed: claimed,
@@ -315,7 +315,7 @@ TrelloPowerUp.initialize({
           height: 230
         }
       }];
-    }}
+    }
       
     } else {
       return [];
