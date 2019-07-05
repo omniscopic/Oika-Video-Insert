@@ -301,7 +301,19 @@ TrelloPowerUp.initialize({
         }
       }];
     } else {
-      return [];
+      return [
+      {
+        id: 'SocialLinks', // optional if you aren't using a function for the title
+        claimed: claimed,
+        icon:  YOUTUBE_GRAY,
+        title: 'Social Feeds',
+        content: {
+          type: 'iframe',
+          url: t.signUrl('./sectionSocialLinks.html', { arg: 'you can pass your section args here' }),
+          height: 230
+        }
+      }
+      ];
     }
   },
   'attachment-thumbnail': function(t, options){
