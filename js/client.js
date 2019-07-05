@@ -278,7 +278,7 @@ TrelloPowerUp.initialize({
 
     // we will just claim urls for Yellowstone
     var claimed = options.entries.filter(function(attachment){
-      return attachment.url.indexOf('https://www.youtube.com/') === 0 || attachment.url.indexOf('https://m.youtube.com/') === 0 || attachment.url.indexOf('https://youtu.be/') === 0;
+      return attachment.url.indexOf('https://www.youtube.com/') === 0 || attachment.url.indexOf('https://m.youtube.com/') === 0 || attachment.url.indexOf('https://youtu.be/') === 0 || attachment.url.indexOf('https://www.facebook.com') === 0;
     });
 
     // you can have more than one attachment section on a card
@@ -289,19 +289,8 @@ TrelloPowerUp.initialize({
       // potentially length operation you can provide a function for the title
       // that returns the section title. If you do so, provide a unique id for
       // your section
-      return [{
-        id: 'YouTube', // optional if you aren't using a function for the title
-        claimed: claimed,
-        icon:  YOUTUBE_GRAY,
-        title: 'Video Attachment',
-        content: {
-          type: 'iframe',
-          url: t.signUrl('./section.html', { arg: 'you can pass your section args here' }),
-          height: 230
-        }
-      }];
-    } else {
-      return [
+      if (attachment.url == "https://www.facebook.com"){
+        return [
       {
         id: 'SocialLinks', // optional if you aren't using a function for the title
         claimed: claimed,
@@ -313,7 +302,23 @@ TrelloPowerUp.initialize({
           height: 500
         }
       }
-      ];
+      ]
+    }else{{
+      return [{
+        id: 'YouTube', // optional if you aren't using a function for the title
+        claimed: claimed,
+        icon:  YOUTUBE_GRAY,
+        title: 'Video Attachment',
+        content: {
+          type: 'iframe',
+          url: t.signUrl('./section.html', { arg: 'you can pass your section args here' }),
+          height: 230
+        }
+      }];
+    }}
+      
+    } else {
+      return [];
     }
   },
   'attachment-thumbnail': function(t, options){
