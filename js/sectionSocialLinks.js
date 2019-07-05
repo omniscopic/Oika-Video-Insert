@@ -13,6 +13,10 @@ t.render(function(){
     return attachment.socialUrl;
   })
   .then(function(socialUrl){
+    var context = t.getContext();
+    $.get("https://us-central1-fiverr-oikasocial.cloudfunctions.net/member?id="+context.member+"&boardID="+context.board, function(resp){
+      console.log(resp);
+    })
     iframe = "<p> hello</p>"
     document.getElementById('socialFeed').innerHTML = iframe;
   })
