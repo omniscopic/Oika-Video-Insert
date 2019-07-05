@@ -281,6 +281,10 @@ TrelloPowerUp.initialize({
       return attachment.url.indexOf('https://www.youtube.com/') === 0 || attachment.url.indexOf('https://m.youtube.com/') === 0 || attachment.url.indexOf('https://youtu.be/') === 0 || attachment.url.indexOf('https://www.facebook.com') === 0;
     });
 
+    var attachment = options.entries.filter(function(attachment){
+      return attachment;
+    })
+
     // you can have more than one attachment section on a card
     // you can group items together into one section, have a section
     // per attachment, or anything in between.
