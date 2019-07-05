@@ -345,6 +345,12 @@ TrelloPowerUp.initialize({
       icon: GRAY_ICON, // don't use a colored icon here
       text: 'Add YouTube',
       callback: addYTCardButtonCallback
+    }, {
+      // usually you will provide a callback function to be run on button click
+      // we recommend that you use a popup on click generally
+      icon: GRAY_ICON, // don't use a colored icon here
+      text: 'Add Social Links',
+      callback: addYTCardButtonCallback
     }];
   },
   'card-detail-badges': function(t, options) {
