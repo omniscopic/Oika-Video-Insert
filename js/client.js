@@ -293,6 +293,7 @@ TrelloPowerUp.initialize({
       // potentially length operation you can provide a function for the title
       // that returns the section title. If you do so, provide a unique id for
       // your section
+      console.log(attachment.url);
       if (attachment.url == "https://www.facebook.com/helarapwadan/"){
         return [
       {
