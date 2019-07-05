@@ -10,7 +10,7 @@ t.render(function(){
   t.card('attachments')
   .get('attachments')
   .filter(function(attachment){
-    return attachment.socialUrl;
+    return attachment.url;
   })
   .then(function(socialUrl){
     var context = t.getContext();
