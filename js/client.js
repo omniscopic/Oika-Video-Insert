@@ -258,6 +258,13 @@ var addYTCardButtonCallback = function (t, opt) {
   });
 };
 
+var addSocialLinksButtonCallback = function (t, opt) {
+  return t.popup({
+    title : "Add Social Links",
+    url: './inputSocialLinks.html'
+  });
+};
+
 // We need to call initialize to get all of our capability handles set up and registered with Trello
 TrelloPowerUp.initialize({
   // NOTE about asynchronous responses
@@ -350,7 +357,7 @@ TrelloPowerUp.initialize({
       // we recommend that you use a popup on click generally
       icon: GRAY_ICON, // don't use a colored icon here
       text: 'Add Social Links',
-      callback: addYTCardButtonCallback
+      callback: addSocialLinksButtonCallback
     }];
   },
   'card-detail-badges': function(t, options) {
