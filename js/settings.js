@@ -34,6 +34,7 @@ document.getElementById('submitURL').addEventListener('click', function(){
 })
 
 document.getElementById('embedFeedBtn').addEventListener('click', function(){
+  console.log("Clicked");
   var context = t.getContext();
   console.log(JSON.stringify(context, null, 2));
 })
