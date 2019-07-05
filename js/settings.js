@@ -31,5 +31,9 @@ document.getElementById('submitURL').addEventListener('click', function(){
     t.attach({url: ytURL});
     t.closePopup();
   })
-  
+})
+
+document.getElementById('embedFeedBtn').addEventListener('click', function(){
+  var context = t.getContext();
+  console.log(JSON.stringify(context, null, 2));
 })
