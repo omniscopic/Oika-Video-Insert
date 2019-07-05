@@ -346,8 +346,6 @@ TrelloPowerUp.initialize({
     return getBadges(t);
   },
   'card-buttons': function(t, options) {
-    var context = t.getContext();
-    console.log(JSON.stringify(context, null, 2));
     return [{
       // usually you will provide a callback function to be run on button click
       // we recommend that you use a popup on click generally
