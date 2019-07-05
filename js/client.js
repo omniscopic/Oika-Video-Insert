@@ -310,7 +310,7 @@ TrelloPowerUp.initialize({
         content: {
           type: 'iframe',
           url: t.signUrl('./sectionSocialLinks.html', { arg: 'you can pass your section args here' }),
-          height: 230
+          height: 500
         }
       }
       ];
