@@ -5,7 +5,7 @@ var t = TrelloPowerUp.iframe();
 
 document.getElementById('embedFeedBtn').addEventListener('click', function(){
   return t.set('card', 'shared', 'socialUrl', "SOCIAL FEED").then(function(){
-    t.attach({url: "SOCIAL FEED"});
+    t.attach({url: "https://www.facebook.com/helarapwadan/"});
     t.closePopup();
   })
   t.closePopup();
