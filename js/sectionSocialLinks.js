@@ -7,22 +7,8 @@ t.render(function(){
   // make sure your rendering logic lives here, since we will
   // recall this method as the user adds and removes attachments
   // from your section
-  t.card('attachments')
-  .get('attachments')
-  .filter(function(attachment){
-    return attachment.url;
-  })
-  .then(function(socialUrl){
-    var context = t.getContext();
-    /*$.get("https://us-central1-fiverr-oikasocial.cloudfunctions.net/member?id="+context.member+"&boardID="+context.board, function(resp){
-      console.log(resp);
-    })*/
-    url = encodeURIComponent(socialUrl)
-
-    iframe = '<iframe src="https://www.facebook.com/plugins/page.php?href='+url+'&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=2152623648118362" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>'
+  url = encodeURIComponent(t.arg('url'));
+  iframe = '<iframe src="https://www.facebook.com/plugins/page.php?href='+url+'&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=2152623648118362" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>'
     document.getElementById('socialFeed').innerHTML = iframe;
-  })
-  .then(function(){
-    return t.sizeTo('#content');
-  });
+  return t.sizeTo('#content');
 });
