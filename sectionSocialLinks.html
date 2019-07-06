@@ -9,9 +9,13 @@
   <body>
     <div id="content">
       <div id="socialFeed">
-        <a class="twitter-timeline" href=<script type="text/javascript">t.arg('fbUrl')</script>>Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a id="twitter-embed" class="twitter-timeline">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
+    <script type="text/javascript">
+      a = document.getElementById("twitter-embed");
+      a.href = t.arg('fbUrl');
+    </script>
     <script src="./js/jquery.min.js"></script>
     <script src="./js/sectionSocialLinks.js"></script>
   </body>
