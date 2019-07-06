@@ -294,7 +294,7 @@ TrelloPowerUp.initialize({
       if (claimed[i].url == "https://www.facebook.com/helarapwadan/"){
         attachments.push({
         id: 'SocialLinks', // optional if you aren't using a function for the title
-        claimed: claimed[i],
+        claimed: claimed,
         icon:  YOUTUBE_GRAY,
         title: 'Social Feeds',
         content: {
@@ -306,7 +306,7 @@ TrelloPowerUp.initialize({
     }else{
       attachments.push({
         id: 'YouTube', // optional if you aren't using a function for the title
-        claimed: claimed[i],
+        claimed: claimed,
         icon:  YOUTUBE_GRAY,
         title: 'Video Attachment',
         content: {
