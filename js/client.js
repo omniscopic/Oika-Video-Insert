@@ -278,15 +278,8 @@ TrelloPowerUp.initialize({
 
     // we will just claim urls for Yellowstone
     var claimed = options.entries.filter(function(attachment){
-      
       return attachment.url.indexOf('https://www.youtube.com/') === 0 || attachment.url.indexOf('https://m.youtube.com/') === 0 || attachment.url.indexOf('https://youtu.be/') === 0 || attachment.url.indexOf('https://www.facebook.com') === 0;
     });
-
-    var attachment = options.entries.filter(function(attachment){
-      console.log("Value from attachment");
-      console.log(attachment);
-      return attachment;
-    })
 
     // you can have more than one attachment section on a card
     // you ca group items together into one section, have a section
@@ -301,19 +294,19 @@ TrelloPowerUp.initialize({
       if (claimed[i].url == "https://www.facebook.com/helarapwadan/"){
         attachments.push({
         id: 'SocialLinks', // optional if you aren't using a function for the title
-        claimed: claimed,
+        claimed: claimed[i],
         icon:  YOUTUBE_GRAY,
         title: 'Social Feeds',
         content: {
           type: 'iframe',
-          url: t.signUrl('./sectionSocialLinks.html', { arg: 'you can pass your section args here' }),
+          url: t.signUrl('./sectionSocialLinks.html', { url:claimed[i].url }),
           height: 500
         }
       })
     }else{
       attachments.push({
         id: 'YouTube', // optional if you aren't using a function for the title
-        claimed: claimed,
+        claimed: claimed[i],
         icon:  YOUTUBE_GRAY,
         title: 'Video Attachment',
         content: {
