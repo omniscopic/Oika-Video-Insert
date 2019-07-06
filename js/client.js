@@ -363,6 +363,8 @@ TrelloPowerUp.initialize({
     }];
   },
   'card-badges': function(t, options){
+    let cardAttachments = options.attachments;
+    console.log(cardAttachments);
     return getBadges(t);
   },
   'card-buttons': function(t, options) {
