@@ -1,7 +1,5 @@
 var t = TrelloPowerUp.iframe();
 
-// you can access arguments passed to your iframe like so
-
 
 t.render(function(){
   // make sure your rendering logic lives here, since we will
