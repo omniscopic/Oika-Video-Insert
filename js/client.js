@@ -311,7 +311,7 @@ TrelloPowerUp.initialize({
         title: 'Video Attachment',
         content: {
           type: 'iframe',
-          url: t.signUrl('./section.html', { url: claimed[i].url }),
+          url: t.signUrl('./section.html', { ytUrl: claimed[i].url }),
           height: 230
         }
       })
