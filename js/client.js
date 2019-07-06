@@ -278,12 +278,7 @@ TrelloPowerUp.initialize({
 
     // we will just claim urls for Yellowstone
     var claimed = options.entries.filter(function(attachment){
-      console.log("Options")
-      console.log(options);
-      console.log("Options.entries");
-      console.log(options.entries);
-      console.log("attachment.url");
-      console.log(attachment.url);
+      
       return attachment.url.indexOf('https://www.youtube.com/') === 0 || attachment.url.indexOf('https://m.youtube.com/') === 0 || attachment.url.indexOf('https://youtu.be/') === 0 || attachment.url.indexOf('https://www.facebook.com') === 0;
     });
 
@@ -294,17 +289,17 @@ TrelloPowerUp.initialize({
     })
 
     // you can have more than one attachment section on a card
-    // you can group items together into one section, have a section
+    // you ca group items together into one section, have a section
     // per attachment, or anything in between.
     if(claimed && claimed.length > 0){
-      console.log(claimed.url);
+      attachments = []
+      for (i=0; i<claimed.length; i++){
       // if the title for your section requires a network call or other
       // potentially length operation you can provide a function for the title
       // that returns the section title. If you do so, provide a unique id for
       // your section
-      if (attachment.url == "https://www.facebook.com/helarapwadan/"){
-        return [
-      {
+      if (claimed[i].url == "https://www.facebook.com/helarapwadan/"){
+        attachments.push({
         id: 'SocialLinks', // optional if you aren't using a function for the title
         claimed: claimed,
         icon:  YOUTUBE_GRAY,
@@ -314,10 +309,9 @@ TrelloPowerUp.initialize({
           url: t.signUrl('./sectionSocialLinks.html', { arg: 'you can pass your section args here' }),
           height: 500
         }
-      }
-      ]
+      })
     }else{
-      return [{
+      attachments.push({
         id: 'YouTube', // optional if you aren't using a function for the title
         claimed: claimed,
         icon:  YOUTUBE_GRAY,
@@ -327,8 +321,12 @@ TrelloPowerUp.initialize({
           url: t.signUrl('./section.html', { arg: 'you can pass your section args here' }),
           height: 230
         }
-      }];
+      })
     }
+    }
+      console.log(attachments);
+      return attachments;
+      
       
     } else {
       return [];
