@@ -291,7 +291,7 @@ TrelloPowerUp.initialize({
       // potentially length operation you can provide a function for the title
       // that returns the section title. If you do so, provide a unique id for
       // your section
-      if (claimed[i].url == "https://www.facebook.com/helarapwadan/"){
+      if (claimed[i].url.startsWith("https://www.facebook.com/")){
         attachments.push({
         id: 'SocialLinks', // optional if you aren't using a function for the title
         claimed: claimed,
