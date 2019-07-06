@@ -310,11 +310,11 @@ TrelloPowerUp.initialize({
     }];
   },
   'card-badges': function(t, options){
+    let cardAttachments = options.attachments;
     return [ {
       // its best to use static badges unless you need your badges to refresh
       // you can mix and match between static and dynamic
       text: 'YouTube',
-      icon: GRAY_ICON, // for card front badges only
       color: 'red'
     }];
   },
