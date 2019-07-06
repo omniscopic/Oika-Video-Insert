@@ -297,7 +297,7 @@ TrelloPowerUp.initialize({
     // you can group items together into one section, have a section
     // per attachment, or anything in between.
     if(claimed && claimed.length > 0){
-      console.log(claimed);
+      console.log(claimed.url);
       // if the title for your section requires a network call or other
       // potentially length operation you can provide a function for the title
       // that returns the section title. If you do so, provide a unique id for
