@@ -5,7 +5,10 @@ t.render(function(){
   // make sure your rendering logic lives here, since we will
   // recall this method as the user adds and removes attachments
   // from your section
-  var url = t.arg('url');
+  t.card('attachments')
+  .get('attachments')
+  .filter(function(attachment){
+    var url = t.arg('url');
     
     if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com") || url.startsWith("http://www.youtube.com") || url.startsWith("http://m.youtube.com")){
         if (url.includes("watch") && url.includes("list")){
@@ -26,6 +29,7 @@ t.render(function(){
       }
       // ytURL = JSON.stringify(url, null, 2);
       document.getElementById('video').innerHTML = iframe; 
-      return t.sizeTo('#content');
-
+  }).then(function(){
+    return t.sizeTo('#content');
+  });
 });
