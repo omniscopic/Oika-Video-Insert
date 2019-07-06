@@ -304,6 +304,7 @@ TrelloPowerUp.initialize({
         }
       })
     }else{
+      console.log(claimed[i].url);
       attachments.push({
         id: 'YouTube', // optional if you aren't using a function for the title
         claimed: claimed,
