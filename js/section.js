@@ -10,11 +10,8 @@ t.render(function(){
   t.card('attachments')
   .get('attachments')
   .filter(function(attachment){
-    return attachment.url;
-  })
-  .then(function(ytURL){
-    return t.get('card', 'shared', 'ytURL').then(function(url){
-      if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com") || url.startsWith("http://www.youtube.com") || url.startsWith("http://m.youtube.com")){
+    url = attachment.url;
+    if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com") || url.startsWith("http://www.youtube.com") || url.startsWith("http://m.youtube.com")){
         if (url.includes("watch") && url.includes("list")){
           yt_code = url.split("=")[2];
           var iframe = '<iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list='+yt_code+'" frameborder="0" allowfullscreen>'
@@ -32,10 +29,8 @@ t.render(function(){
         var iframe = '<iframe width="853" height="480" src="https://www.youtube.com/embed/'+yt_code+'" frameborder="0" allowfullscreen></iframe>';
       }
       // ytURL = JSON.stringify(url, null, 2);
-      document.getElementById('video').innerHTML = iframe;    
-    })
-  })
-  .then(function(){
+      document.getElementById('video').innerHTML = iframe; 
+  }).then(function(){
     return t.sizeTo('#content');
   });
 });
