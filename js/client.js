@@ -311,12 +311,17 @@ TrelloPowerUp.initialize({
   },
   'card-badges': function(t, options){
     let cardAttachments = options.attachments;
-    return [ {
-      // its best to use static badges unless you need your badges to refresh
-      // you can mix and match between static and dynamic
+    for(i=0; i<cardAttachments.length;i++){
+      if (cardAttachments[i].url.includes("youtube") || cardAttachments[i].url.includes("youtu.be")) {
+        return [ {
       text: 'YouTube',
       color: 'red'
     }];
+  }else{
+    return []
+    }
+  }return []
+    
   },
   'card-buttons': function(t, options) {
     return [{
