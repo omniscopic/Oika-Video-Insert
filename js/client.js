@@ -312,7 +312,7 @@ TrelloPowerUp.initialize({
   'card-badges': function(t, options){
     let cardAttachments = options.attachments;
     for(i=0; i<cardAttachments.length;i++){
-      if (cardAttachments[i].url.includes("youtube") || cardAttachments[i].url.includes("youtu.be")) {
+      if (cardAttachments[i].url.startsWith("https://www.youtube.com/") || cardAttachments[i].url.startsWith("https://m.youtube.com/") || cardAttachments[i].url.startsWith('https://youtu.be/')){
         return [ {
       text: 'YouTube',
       color: 'red'
