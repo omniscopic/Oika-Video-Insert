@@ -288,6 +288,8 @@ TrelloPowerUp.initialize({
     });
 
     var attachment = options.entries.filter(function(attachment){
+      console.log("Value from attachment");
+      console.log(attachment);
       return attachment;
     })
 
