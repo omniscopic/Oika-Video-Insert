@@ -6,6 +6,7 @@ t.render(function(){
   // recall this method as the user adds and removes attachments
   // from your section
   var url = t.arg('url');
+  console.log(url);
     
     if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com") || url.startsWith("http://www.youtube.com") || url.startsWith("http://m.youtube.com")){
         if (url.includes("watch") && url.includes("list")){
