@@ -299,7 +299,7 @@ TrelloPowerUp.initialize({
         title: 'Social Feeds',
         content: {
           type: 'iframe',
-          url: t.signUrl('./sectionSocialLinks.html', { url:claimed[i].url }),
+          url: t.signUrl('./sectionSocialLinks.html', {fbUrl:claimed[i].url }),
           height: 500
         }
       })
