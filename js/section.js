@@ -1,8 +1,7 @@
 var t = TrelloPowerUp.iframe();
 
 // you can access arguments passed to your iframe like so
-var arg = t.arg('arg');
-console.log(arg);
+
 
 t.render(function(){
   // make sure your rendering logic lives here, since we will
@@ -11,7 +10,8 @@ t.render(function(){
   t.card('attachments')
   .get('attachments')
   .filter(function(attachment){
-    url = attachment.url;
+    var url = t.arg('url');
+    
     if (url.startsWith("https://www.youtube.com") || url.startsWith("https://m.youtube.com") || url.startsWith("http://www.youtube.com") || url.startsWith("http://m.youtube.com")){
         if (url.includes("watch") && url.includes("list")){
           yt_code = url.split("=")[2];
