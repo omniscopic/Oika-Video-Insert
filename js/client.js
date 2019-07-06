@@ -365,7 +365,13 @@ TrelloPowerUp.initialize({
   'card-badges': function(t, options){
     let cardAttachments = t.card("attachments");
     console.log(cardAttachments);
-    return getBadges(t);
+    return [
+    {
+        text: 'YouTubeVideo',
+        icon: HYPERDEV_ICON, // for card front badges only
+        color: 'red'
+      }
+    ];
   },
   'card-buttons': function(t, options) {
     return [{
