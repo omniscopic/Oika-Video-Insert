@@ -89,8 +89,7 @@ var getBadges = function(t){
     return [ {
       // its best to use static badges unless you need your badges to refresh
       // you can mix and match between static and dynamic
-      title: 'YouTube', // for detail badges only
-      text: 'Static',
+      text: 'YouTube',
       icon: GRAY_ICON, // for card front badges only
       color: 'red'
     }];
