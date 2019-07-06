@@ -311,7 +311,6 @@ TrelloPowerUp.initialize({
   },
   'card-badges': function(t, options){
     let cardAttachments = options.attachments;
-    console.log(cardAttachments);
     isYtVidAvail = false;
     for(i=0; i<cardAttachments.length;i++){
       if (cardAttachments[i].url.startsWith('https://www.youtube.com/') || cardAttachments[i].url.startsWith('https://m.youtube.com/') || cardAttachments[i].url.startsWith('https://youtu.be/')){
