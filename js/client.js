@@ -363,15 +363,9 @@ TrelloPowerUp.initialize({
     }];
   },
   'card-badges': function(t, options){
-    let cardAttachments = t.card("attachments");
+    let cardAttachments = options.attachments;
     console.log(cardAttachments);
-    return [
-    {
-        text: 'YouTubeVideo',
-        icon: HYPERDEV_ICON, // for card front badges only
-        color: 'red'
-      }
-    ];
+    return [];
   },
   'card-buttons': function(t, options) {
     return [{
