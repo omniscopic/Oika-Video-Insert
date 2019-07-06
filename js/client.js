@@ -272,6 +272,7 @@ TrelloPowerUp.initialize({
   // you can return a Promise (bluebird promises are included at TrelloPowerUp.Promise)
   // The Promise should resolve to the object type that is expected to be returned
   'attachment-sections': function(t, options){
+    console.log("This ran");
     // options.entries is a list of the attachments for this card
     // you can look through them and 'claim' any that you want to
     // include in your section.
