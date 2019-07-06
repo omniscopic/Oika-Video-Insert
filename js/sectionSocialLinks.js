@@ -9,7 +9,7 @@ t.render(function(){
   // from your section
   url = encodeURIComponent(t.arg('fbUrl'));
   
-  iframe = '<a class="twitter-timeline" href='+t.arg('fbUrl')+'></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
-  document.getElementById('socialFeed').innerHTML = iframe;
+  //iframe = '<a class="twitter-timeline" href='+t.arg('fbUrl')+'></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+  //document.getElementById('socialFeed').innerHTML = iframe;
   return t.sizeTo(500);
 });
