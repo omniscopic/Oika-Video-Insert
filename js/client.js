@@ -320,7 +320,7 @@ TrelloPowerUp.initialize({
   }
   if (isYtVidAvail){
     return [ {
-      icon: YOUTUBE
+      icon: YOUTUBE_GRAY
     }];
   }else{
     return [];
