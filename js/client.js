@@ -80,7 +80,7 @@ var GLITCH_ICON = './images/glitch.svg';
 var WHITE_ICON = './images/icon-white.svg';
 var GRAY_ICON = './images/icon-gray.svg';
 var YOUTUBE_GRAY = "./images/yt_icon_gray.png";
-var YOUTUBE = ".images/YT_PlayButton.png";
+var YOUTUBE = "./images/YT_PlayButton.png";
 
 var randomBadgeColor = function() {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
