@@ -226,7 +226,7 @@ TrelloPowerUp.initialize({
 
     // we will just claim urls for Yellowstone
     var claimed = options.entries.filter(function(attachment){
-      return attachment.url.indexOf('https://www.youtube.com/') === 0 || attachment.url.indexOf('https://m.youtube.com/') === 0 || attachment.url.indexOf('https://youtu.be/') === 0 || attachment.url.indexOf('https://www.twitter.com') === 0 || attachment.url.indexOf('https://twitter.com') === 0 || attachment.url.indexOf('https://mobile.twitter.com') === 0;
+      return attachment.url.indexOf('https://www.youtube.com/') === 0 || attachment.url.indexOf('https://m.youtube.com/') === 0 || attachment.url.indexOf('https://youtu.be/') === 0 || attachment.url.indexOf('https://www.twitter.com') === 0 || attachment.url.indexOf('https://twitter.com') === 0 || attachment.url.indexOf('https://mobile.twitter.com') === 0 || attachment.url.indexOf('https://www.facebook.com') === 0 ||  attachment.url.indexOf('https://m.facebook.com') === 0  ||  attachment.url.indexOf('https://web.facebook.com') === 0 ||  attachment.url.indexOf('https://facebook.com') === 0    ;
     });
 
     // you can have more than one attachment section on a card
@@ -239,7 +239,7 @@ TrelloPowerUp.initialize({
       // potentially length operation you can provide a function for the title
       // that returns the section title. If you do so, provide a unique id for
       // your section
-      if (claimed[i].url.startsWith("https://www.twitter.com/") || claimed[i].url.startsWith("https://twitter.com/") || claimed[i].url.startsWith("https://mobile.twitter.com/")){
+      if (claimed[i].url.startsWith("https://www.twitter.com/") || claimed[i].url.startsWith("https://twitter.com/") || claimed[i].url.startsWith("https://mobile.twitter.com/") || claimed[i].url.startsWith("https://m.facebook.com/") || claimed[i].url.startsWith("https://www.facebook.com/") || claimed[i].url.startsWith("https://web.facebook.com/") || claimed[i].url.startsWith("https://facebook.com/")){
         attachments.push({
         id: 'SocialLinks', // optional if you aren't using a function for the title
         claimed: claimed,

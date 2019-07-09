@@ -9,12 +9,24 @@
   <body>
     <div id="content">
       <div id="socialFeed">
-        <a id="twitter-embed" class="twitter-timeline">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a id="twitter-embed" class="twitter-timeline" style="display:none">Tweets</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <iframe id="fb-embed" width="340" height="500" style="border:none;overflow:hidden;display:none;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
       </div>
     </div>
     <script type="text/javascript">
-      a = document.getElementById("twitter-embed");
-      a.href = t.arg('fbUrl');
+      url = t.arg('fbUrl');
+      if (url.startsWith("https://www.facebook.com") || url.startsWith("https://m.facebook.com") || url.startsWith("https://web.facebook.com") || url.startsWith("https://facebook.com")){
+        urlEnc = encodeURIComponent(url);
+        srcUrl = "https://www.facebook.com/plugins/page.php?href="+urlEnc+"&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=2152623648118362";
+        a = document.getElementById("fb-embed");
+        a.src = srcUrl;
+        a.style.display = "block";
+      }else{
+        a = document.getElementById("twitter-embed");
+        a.href = url;
+        a.style.display = 'block';
+      }
+      
     </script>
     <script src="./js/jquery.min.js"></script>
     <script src="./js/sectionSocialLinks.js"></script>
