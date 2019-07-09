@@ -17,7 +17,7 @@
       url = t.arg('fbUrl');
       if (url.startsWith("https://www.facebook.com") || url.startsWith("https://m.facebook.com") || url.startsWith("https://web.facebook.com") || url.startsWith("https://facebook.com")){
         urlEnc = encodeURIComponent(url);
-        srcUrl = "https://www.facebook.com/plugins/page.php?href="+urlEnc+"&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=2152623648118362";
+        srcUrl = "https://www.facebook.com/plugins/page.php?href="+urlEnc+"&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=2152623648118362";
         a = document.getElementById("fb-embed");
         a.src = srcUrl;
         a.style.display = "block";
